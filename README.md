@@ -52,13 +52,23 @@ Além disso, três consumidores independentes processam as mensagens da fila e r
 - Prometheus e Grafana no Azure
 - GitHub Actions (para CI/CD)
 
-## GitHub Actions Workflow
+### Configuração do Pipeline
 
-Este projeto utiliza GitHub Actions para automação do CI/CD. O workflow está definido em `.github/workflows/dotnet.yml` e inclui:
+O pipeline CI/CD segue a estrutura abaixo:
 
-- **Build**: Compila e gera artefatos.
-- **Test**: Executa testes automatizados.
-- **Deploy**: Publica os microsserviços.
+1. **Restaurar Dependências**: O comando `dotnet restore` é executado para baixar todas as dependências do projeto.
+2. **Compilar o Código**: O comando `dotnet build` compila a solução na configuração `Release`.
+3. **Subir o RabbitMQ para Testes**: Um container do RabbitMQ é iniciado via Docker para simular a fila de mensagens.
+4. **Definir Variáveis de Ambiente**: As credenciais do RabbitMQ são configuradas como variáveis no ambiente do pipeline.
+5. **Executar a API em Background**: A aplicação é iniciada para validar sua inicialização correta.
+6. **Verificar Saúde da API**: São feitas chamadas para os endpoints `/health` e `/metrics` para garantir que a API está funcional.
+7. **Executar Testes Unitários**: Os testes automatizados são executados para validar o comportamento da aplicação.
+8. **Publicar Artefatos**: O comando `dotnet publish` gera o pacote para deploy.
+9. **Deploy para o Azure**: A aplicação é enviada automaticamente para o serviço Azure Web Apps.
+
+O deploy no Azure é realizado utilizando a action `azure/webapps-deploy@v3`, garantindo que a versão mais recente da aplicação esteja disponível.
+
+Para que o deploy funcione corretamente, é necessário configurar o **secret** `AZURE_WEBAPP_PUBLISH_PROFILE` no repositório do GitHub.
 
 ## Conclusão
 
