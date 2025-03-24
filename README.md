@@ -1,5 +1,3 @@
-# FiapGrupo57Fase3
-
 ## Apresentação
 
 Link do vídeo: [Inserir link do vídeo]
