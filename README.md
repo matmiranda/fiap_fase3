@@ -6,6 +6,19 @@ Link do vídeo: [Inserir link do vídeo]
 
 Este projeto é composto por uma arquitetura de microsserviços, desenvolvida para gerenciamento de contatos. Ele segue as melhores práticas de desenvolvimento, garantindo escalabilidade, desempenho e facilidade de manutenção.
 
+## API Gateway no Azure
+
+Para facilitar a comunicação entre os microsserviços, foi configurado um **API Gateway no Azure**, que expõe as seguintes rotas:
+
+- **`PUT /contatos/{id}`** – Atualiza um contato pelo ID.  
+- **`POST /contatos`** – Cria um novo contato.  
+- **`DELETE /contatos/{id}`** – Deleta um contato pelo ID.  
+- **`GET /contatos/{id}`** – Obtém um contato pelo ID. *(Usa Azure Functions)*  
+- **`GET /contatos/validar-duplicidade?email={email}`** – Valida a duplicidade de um contato com base no e-mail. *(Usa Azure Functions)*  
+
+Os três primeiros endpoints direcionam as requisições para os respectivos microsserviços de **CREATE, UPDATE e DELETE**, enquanto os dois últimos são implementados usando **Azure Functions**, garantindo maior escalabilidade e eficiência no processamento.
+
+
 Cada operação foi separada em microserviços independentes para maior desacoplamento e eficiência:
 
 - **Producer CREATE**: Responsável por criar novos contatos e enviar mensagens para a fila.  
@@ -31,7 +44,7 @@ Além disso, três consumidores independentes processam as mensagens da fila e r
 - Dapper
 - MySQL
 - RabbitMQ (mensageria para filas)
-- Prometheus e Grafana (para monitoramento)
+- Prometheus e Grafana no Azure
 - GitHub Actions (para CI/CD)
 
 ## GitHub Actions Workflow
