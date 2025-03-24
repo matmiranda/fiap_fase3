@@ -10,11 +10,11 @@ Este projeto é composto por uma arquitetura de microsserviços, desenvolvida pa
 
 Para facilitar a comunicação entre os microsserviços, foi configurado um **API Gateway no Azure**, que expõe as seguintes rotas:
 
-- **`PUT /contatos/{id}`** – Atualiza um contato pelo ID.  
-- **`POST /contatos`** – Cria um novo contato.  
-- **`DELETE /contatos/{id}`** – Deleta um contato pelo ID.  
-- **`GET /contatos/{id}`** – Obtém um contato pelo ID. *(Usa Azure Functions)*  
-- **`GET /contatos/validar-duplicidade?email={email}`** – Valida a duplicidade de um contato com base no e-mail. *(Usa Azure Functions)*  
+- **`PUT /contato`** – Atualiza um contato pelo ID.  
+- **`POST /contato`** – Cria um novo contato.  
+- **`DELETE /contato/{id}`** – Deleta um contato pelo ID.  
+- **`GET /contato/{id}`** – Obtém um contato pelo ID. *(Usa Azure Functions)*  
+- **`POST /contato/validar-duplicidade`** – Valida a duplicidade de um contato com base no e-mail. *(Usa Azure Functions)*  
 
 Os três primeiros endpoints direcionam as requisições para os respectivos microsserviços de **CREATE, UPDATE e DELETE**, enquanto os dois últimos são implementados usando **Azure Functions**, garantindo maior escalabilidade e eficiência no processamento.
 
