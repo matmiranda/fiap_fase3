@@ -19,9 +19,9 @@ Para facilitar a comunicação entre os microsserviços, foi configurado um **AP
 - **`GET /contato/{id}`** – Obtém um contato pelo ID. *(Usa Azure Functions)*  
   - Repositório: [azure-functions-consulta-contato-id](https://github.com/matmiranda/azure-functions-consulta-contato-id)  
 - **`POST /contato/validar-duplicidade`** – Valida a duplicidade de um contato com base no e-mail. *(Usa Azure Functions)*  
+  - Repositório: [azure-functions-valida-duplicidade](https://github.com/matmiranda/azure-functions-valida-duplicidade)  
 
 Os três primeiros endpoints direcionam as requisições para os respectivos microsserviços de **CREATE, UPDATE e DELETE**, enquanto os dois últimos são implementados usando **Azure Functions**, garantindo maior escalabilidade e eficiência no processamento.
-
 
 
 Cada operação foi separada em microserviços independentes para maior desacoplamento e eficiência:
