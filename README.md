@@ -10,9 +10,12 @@ Este projeto é composto por uma arquitetura de microsserviços, desenvolvida pa
 
 Cada operação foi separada em microserviços independentes para maior desacoplamento e eficiência:
 
-- **Producer CREATE**: Responsável por criar novos contatos e enviar mensagens para a fila.
-- **Producer UPDATE**: Responsável por atualizar contatos e enviar mensagens para a fila.
-- **Producer DELETE**: Responsável por excluir contatos e enviar mensagens para a fila.
+- **Producer CREATE**: Responsável por criar novos contatos e enviar mensagens para a fila.  
+  - Repositório: [microservice-create-contact](https://github.com/matmiranda/microservice-create-contact)
+- **Producer UPDATE**: Responsável por atualizar contatos e enviar mensagens para a fila.  
+  - Repositório: [microservice-update-contact](https://github.com/matmiranda/microservice-update-contact)
+- **Producer DELETE**: Responsável por excluir contatos e enviar mensagens para a fila.  
+  - Repositório: [microservice-delete-contact](https://github.com/matmiranda/microservice-delete-contact)
 
 Além disso, três consumidores independentes processam as mensagens da fila e realizam a persistência dos dados no banco MySQL:
 
@@ -41,4 +44,3 @@ Este projeto utiliza GitHub Actions para automação do CI/CD. O workflow está 
 ## Conclusão
 
 A fase 3 do projeto aprimorou a arquitetura, garantindo maior escalabilidade e desempenho por meio da separação dos microserviços e consumidores. Além disso, integrações com RabbitMQ, Prometheus e Grafana garantem alta disponibilidade e monitoramento eficiente.
-
