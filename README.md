@@ -17,9 +17,12 @@ Cada operação foi separada em microserviços independentes para maior desacopl
 
 Além disso, três consumidores independentes processam as mensagens da fila e realizam a persistência dos dados no banco MySQL:
 
-- **Consumer CREATE**: Lê mensagens da fila e insere contatos no MySQL.
-- **Consumer UPDATE**: Lê mensagens da fila e atualiza contatos no MySQL.
-- **Consumer DELETE**: Lê mensagens da fila e remove contatos do MySQL.
+- **Consumer CREATE**: Lê mensagens da fila e insere contatos no MySQL.  
+  - Repositório: [consumer-create-contact](https://github.com/marlamoury/Consumer.Contact.Create)
+- **Consumer UPDATE**: Lê mensagens da fila e atualiza contatos no MySQL.  
+  - Repositório: [consumer-create-contact](https://github.com/marlamoury/Consumer.Contact.Update)
+- **Consumer DELETE**: Lê mensagens da fila e remove contatos do MySQL.  
+  - Repositório: [consumer-create-contact](https://github.com/marlamoury/Consumer.Contact.Delete)
 
 ## Tecnologias Utilizadas
 
