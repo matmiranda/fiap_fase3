@@ -25,16 +25,6 @@ Para facilitar a comunicação entre os microsserviços, foi configurado um **AP
 
 Os três primeiros endpoints direcionam as requisições para os respectivos microsserviços de **CREATE, UPDATE e DELETE**, enquanto os dois últimos são implementados usando **Azure Functions**, garantindo maior escalabilidade e eficiência no processamento.
 
-
-Cada operação foi separada em microserviços independentes para maior desacoplamento e eficiência:
-
-- **Producer CREATE**: Responsável por criar novos contatos e enviar mensagens para a fila.  
-  - Repositório: [producer-create-contact](https://github.com/matmiranda/microservice-create-contact)
-- **Producer UPDATE**: Responsável por atualizar contatos e enviar mensagens para a fila.  
-  - Repositório: [producer-update-contact](https://github.com/matmiranda/microservice-update-contact)
-- **Producer DELETE**: Responsável por excluir contatos e enviar mensagens para a fila.  
-  - Repositório: [producer-delete-contact](https://github.com/matmiranda/microservice-delete-contact)
-
 Além disso, três consumidores independentes processam as mensagens da fila e realizam a persistência dos dados no banco MySQL:
 
 - **Consumer CREATE**: Lê mensagens da fila e insere contatos no MySQL.  
