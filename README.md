@@ -40,9 +40,9 @@ Além disso, três consumidores independentes processam as mensagens da fila e r
 - **Consumer CREATE**: Lê mensagens da fila e insere contatos no MySQL.  
   - Repositório: [consumer-create-contact](https://github.com/marlamoury/Consumer.Contact.Create)
 - **Consumer UPDATE**: Lê mensagens da fila e atualiza contatos no MySQL.  
-  - Repositório: [consumer-create-contact](https://github.com/marlamoury/Consumer.Contact.Update)
+  - Repositório: [consumer-update-contact](https://github.com/marlamoury/Consumer.Contact.Update)
 - **Consumer DELETE**: Lê mensagens da fila e remove contatos do MySQL.  
-  - Repositório: [consumer-create-contact](https://github.com/marlamoury/Consumer.Contact.Delete)
+  - Repositório: [consumer-delete-contact](https://github.com/marlamoury/Consumer.Contact.Delete)
 
 ## Tecnologias Utilizadas
 
