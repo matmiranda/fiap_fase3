@@ -1,6 +1,7 @@
 ## Apresentação
 
-Link do vídeo: [Inserir link do vídeo]
+Link do vídeo parte 1: [https://www.youtube.com/watch?v=3uR-HXtnqRA]
+Link do vídeo parte 2: [https://www.youtube.com/watch?v=DVP3ZQCi4xE]
 
 ## Descrição
 
